@@ -13,7 +13,7 @@ public class CatalogUtil {
             oos.writeObject(catalog);
         }
     }
-    public static Catalog load(String path) throws InvalidCatalogException {
+    public static Catalog load(String path) {
         try (var ois = new ObjectInputStream(new FileInputStream(path))) {
             Catalog myCatalog = (Catalog) ois.readObject();
 
