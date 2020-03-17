@@ -17,13 +17,16 @@ this.setPath(s);
 
     //…
     public void add(Document doc) {
-        getDocuments().add(doc);
+        documents.add(doc);
     }
+    
     public Document findById(String id) {
         //…
-        this.setName(id);
+        return documents.stream()
+                .filter(d->d.getId().equals(id)).findFirst().orElse(null);
 
-return null;
+
+
     }
 
     public String getPath() {

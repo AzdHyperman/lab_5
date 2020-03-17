@@ -19,9 +19,7 @@ public class CatalogUtil {
 
             ois.close();
             return myCatalog;
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return null;
@@ -29,7 +27,7 @@ public class CatalogUtil {
 
         public static void view(Document doc) throws URISyntaxException, IOException {
         Desktop desktop = Desktop.getDesktop();
-        desktop.getDesktop().browse(new URI(doc.getLocation()));
+        Desktop.getDesktop().browse(new URI(doc.getLocation()));
 
     }
     private void testLoadView() throws CatalogUtil.InvalidCatalogException, IOException, ClassNotFoundException, URISyntaxException {

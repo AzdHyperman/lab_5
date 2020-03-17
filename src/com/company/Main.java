@@ -35,6 +35,7 @@ public class Main {
     private void testLoadView() throws CatalogUtil.InvalidCatalogException,IOException,URISyntaxException {
 
         Catalog catalog = CatalogUtil.load("c://java//catalog.ser");
+        assert catalog != null;
         Document doc = catalog.findById("java1");
         CatalogUtil.view(doc);
 
