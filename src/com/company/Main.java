@@ -19,7 +19,7 @@ public class Main {
 
     private void testCreateSave() throws IOException {
         Catalog catalog =
-                new Catalog("Java Resources", "c://java//catalog.ser");
+                new Catalog("Java Resources", "c://java//catalog.ser"); //am schimbat path-ul pentru a vedea la mine
         Document doc = new Document("java1", "Java Course 1",
                 "https://profs.info.uaic.ro/~acf/java/slides/en/intro_slide_en.pdf");
         doc.addTag("type", "Slides");
