@@ -20,7 +20,7 @@ public class Main {
         CatalogUtil.save(catalog);
     }
 
-    private void testLoadView() {
+    private void testLoadView() throws CatalogUtil.InvalidCatalogException {
         Catalog catalog = CatalogUtil.load("d:/java/catalog.ser");
         Document doc = catalog.findById("java1");
         CatalogUtil.view(doc);

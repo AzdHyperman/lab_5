@@ -17,6 +17,7 @@ public class CatalogUtil {
             throws InvalidCatalogException {
         //…
 
+        return null;
     }
     public static void view(Document doc) {
         Desktop desktop = Desktop.getDesktop();

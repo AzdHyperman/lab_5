@@ -9,6 +9,10 @@ public class Catalog implements Serializable {
     private String path;
     private List<Document> documents = new ArrayList<>();
 
+    public Catalog(String java_resources, String s) {
+
+    }
+
     //…
     public void add(Document doc) {
         documents.add(doc);
@@ -16,7 +20,8 @@ public class Catalog implements Serializable {
     public Document findById(String id) {
         //…
         this.name=id;
-        return  documents;
+
+        return null;
     }
 
     public String getPath() {
