@@ -2,7 +2,8 @@ package com.company;
 
 import java.awt.*;
 import java.io.*;
-
+import java.net.URI;
+import java.net.URISyntaxException;
 
 public class CatalogUtil {
     public static void save(Catalog catalog)
@@ -13,7 +14,7 @@ public class CatalogUtil {
         }
     }
     public static Catalog load(String path) throws InvalidCatalogException {
-        try (var ois = new ObjectInputStream(new FileInputStream(path))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(path))) {
             Catalog myCatalog = (Catalog) ois.readObject();
 
             ois.close();
@@ -23,16 +24,15 @@ public class CatalogUtil {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-
         return null;
     }
 
-        public static void view(Document doc) {
+        public static void view(Document doc) throws URISyntaxException, IOException {
         Desktop desktop = Desktop.getDesktop();
-        //… browse or open, depending of the location type
+        desktop.getDesktop().browse(new URI(doc.getLocation()));
+
     }
-    private void testLoadView() throws CatalogUtil.InvalidCatalogException, IOException, ClassNotFoundException {
+    private void testLoadView() throws CatalogUtil.InvalidCatalogException, IOException, ClassNotFoundException, URISyntaxException {
 
         Catalog catalog = CatalogUtil.load("c://java//catalog.ser");
         Document doc = catalog.findById("java1");
