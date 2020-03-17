@@ -32,6 +32,15 @@ public class CatalogUtil {
         Desktop desktop = Desktop.getDesktop();
         //… browse or open, depending of the location type
     }
+    private void testLoadView() throws CatalogUtil.InvalidCatalogException, IOException, ClassNotFoundException {
+
+        Catalog catalog = CatalogUtil.load("c://java//catalog.ser");
+        Document doc = catalog.findById("java1");
+        CatalogUtil.view(doc);
+
+
+    }
+
     public static class InvalidCatalogException extends Exception {
         public InvalidCatalogException(Exception ex) {
             super("Invalid catalog file.", ex);
