@@ -23,7 +23,7 @@ public class CatalogUtil {
         Desktop desktop = Desktop.getDesktop();
         //… browse or open, depending of the location type
     }
-    public class InvalidCatalogException extends Exception {
+    public static class InvalidCatalogException extends Exception {
         public InvalidCatalogException(Exception ex) {
             super("Invalid catalog file.", ex);
         }
