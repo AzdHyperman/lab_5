@@ -10,7 +10,8 @@ public class Catalog implements Serializable {
     private List<Document> documents = new ArrayList<>();
 
     public Catalog(String java_resources, String s) {
-
+this.name=java_resources;
+this.path=s;
     }
 
     //…

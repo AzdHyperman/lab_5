@@ -12,6 +12,9 @@ public class Document implements Serializable {
     private Map<String, Object> tags = new HashMap<>();
 
     public Document(String java1, String s, String s1) {
+        this.id=java1;
+        this.name=s;
+        this.location=s1;
     }
 
     //…
@@ -20,4 +23,4 @@ public class Document implements Serializable {
     }
 //…
 }
-}
+

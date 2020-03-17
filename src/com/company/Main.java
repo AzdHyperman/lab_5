@@ -5,8 +5,16 @@ import java.io.IOException;
 public class Main {
     public static void main(String args[]) {
         Main app = new Main();
-        app.testCreateSave();
-        app.testLoadView();
+        try {
+            app.testCreateSave();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            app.testLoadView();
+        } catch (CatalogUtil.InvalidCatalogException e) {
+            e.printStackTrace();
+        }
     }
 
     private void testCreateSave() throws IOException {
