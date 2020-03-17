@@ -14,7 +14,7 @@ public class CatalogUtil {
         }
     }
     public static Catalog load(String path) throws InvalidCatalogException {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(path))) {
+        try (var ois = new ObjectInputStream(new FileInputStream(path))) {
             Catalog myCatalog = (Catalog) ois.readObject();
 
             ois.close();
@@ -38,7 +38,6 @@ public class CatalogUtil {
 
 
     }
-
     public static class InvalidCatalogException extends Exception {
         public InvalidCatalogException(Exception ex) {
             super("Invalid catalog file.", ex);

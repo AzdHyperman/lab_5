@@ -10,25 +10,20 @@ public class Catalog implements Serializable {
     private List<Document> documents = new ArrayList<>();
 
     public Catalog(String java_resources, String s) {
-super();
-        this.setName(java_resources);
-this.setPath(s);
-    }
 
-    //…
+        this.setName(java_resources);
+        this.setPath(s);
+    }
+    //functia de add a documentelor
     public void add(Document doc) {
         documents.add(doc);
     }
-    
+    //va cauta dupa ID
     public Document findById(String id) {
-        //…
         return documents.stream()
                 .filter(d->d.getId().equals(id)).findFirst().orElse(null);
-
-
-
     }
-
+    //setter si getters
     public String getPath() {
         return path;
     }
@@ -36,7 +31,6 @@ this.setPath(s);
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
